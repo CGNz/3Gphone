@@ -1,0 +1,217 @@
+
+
+body,.header {
+	margin: 0 auto;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #EEE;
+	font-size: 15px;
+	font-weight: bold;
+	
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	width: 100%;
+	height: 60px;
+	box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.25);
+	background-color: #6699CC;
+}
+
+.title {
+	margin: 0 auto;
+	height: 100%;
+	font-size: 22px;
+	color: #FFF;
+	letter-spacing: 1px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.menu-btn {
+	width: 40px;
+	position: absolute;
+	top: 14px;
+	left: 5%;
+	padding: 3px 0;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.menu-btn:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mstrip {
+	margin: 6px auto;
+	width: 60%;
+	height: 2px;
+	border-radius: 10px;
+	background-color: #fff;
+	transform-origin: 0;
+}
+
+.body {	
+	position: relative;
+	top: 80px;
+}
+
+form {
+	text-align: center;
+	
+
+}
+
+label {
+	height: 20px;
+	color: #6699CC;
+}
+
+select {
+	height: 35px;
+	padding: 0 8px;
+	margin-bottom: 20px;
+	width: 316px;
+	border: none;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+	border-radius: 6px;
+}
+
+
+input {
+	height: 15px;
+	margin-bottom: 20px;
+	width: 300px;
+	padding: 10px 8px;
+	border: none;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+	border-radius: 6px;
+}
+
+
+
+textarea {
+
+	margin-bottom: 20px;
+	width: 300px;
+	padding: 12px 8px;
+	border: none;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+	border-radius: 6px;
+	vertical-align: top;
+}
+
+button {
+	background-color: #6699CC;
+	color: #FFF;
+	width: 80px;
+	padding: 12px 8px;
+	border: none;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+	border-radius: 5px;
+
+}
+
+
+.menu {
+	position: fixed;
+	top: 0;
+	left: -260px;
+	z-index: 3;
+	width: 250px;
+	height: 100%;
+	background-color: #2E2E3E;
+	transition: .3s ease;
+}
+.menu-list {
+	width: 100%;
+	height: 300px;
+	margin-top: 80px;
+	list-style: none;
+	color: #6699CC;
+	padding: 0;
+
+}
+
+.menu-item {
+	position: relative;
+	height: 60px;
+	cursor: pointer;
+
+}
+.menu-item:hover, .menu-item:active {
+	background-color: #5d616d;
+}
+
+i {
+	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	margin:0 10px 0 40px;
+	text-align: center;
+	color: #CCC;
+}
+.menu-text {
+
+	line-height: 60px;
+	font-size: 16px;
+	color: #CCC;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .4);
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	display: none;
+}
+
+.bill-list {
+	position: absolute;
+	display: none;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+.bill-item {
+	position: relative;
+	list-style: none;
+	width: 90%;
+	padding: 20px 0;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	overflow: auto;
+	margin-bottom: 15px;
+}
+.bill-item:last-child {
+	margin-bottom: 10px;
+}
+.bill-item span{
+	float: left;
+	width: 70%;
+	margin-left: 14px;
+	font-weight: 200;
+}
+.bill-item i {
+	display: none;
+}
+
+.task-title {
+	font-size: 16px;
+}
+.clear {
+	position: absolute;
+	top: 12px;
+	right: 52px;
+}
