@@ -65,6 +65,11 @@ form {
 
 }
 
+table {
+	width: 80%;
+	text-align: center;
+}
+
 label {
 	height: 20px;
 	color: #6699CC;

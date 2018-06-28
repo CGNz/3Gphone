@@ -1,6 +1,7 @@
 //菜单按钮
 var menuBtn = $('#menu-btn');
 menuBtn.click(function(){
+	// alert("aaa");
 	var menu = $('#menu');
 	if(menu.css('left') == '0px'){
 		menu.css('left','-260px');
@@ -16,7 +17,7 @@ $('.cover').click(function(){
 	$('.cover').fadeOut();
 });
 
-/*
+
 //菜单呼出页面种类
 var MenuItemFunc = (function () {
 	var listPage = function(type) {
@@ -42,7 +43,7 @@ var MenuItemFunc = (function () {
 
 	var bills = function(){
 		if($('#bill-list').html() == ''){
-			render.init(#bill-list);
+			render.init('#bill-list');
 		}
 	};
 
@@ -137,4 +138,3 @@ function Model() {
 	};
 }
 
-*/
