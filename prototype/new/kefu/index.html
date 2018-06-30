@@ -92,21 +92,26 @@
                     <!--报单受理模块 -->
                     <div role="tabpanel" class="tab-pane active" id="sour">
                         <div class="check-div form-inline">
-                            <div class="col-xs-3">
-                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addUser">添加用户 </button>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
+                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加新的报修单 </button>
                             </div>
-                            <div class="col-xs-4">
-                                <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+                            <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4 ">
+                                <input type="text" class=" form-control input-sm " placeholder="输入报修单相关搜索">
                                 <button class="btn btn-white btn-xs ">查 询 </button>
                             </div>
-                            <div class="col-lg-3 col-lg-offset-2 col-xs-4" style=" padding-right: 40px;text-align: right;">
-                                <label for="paixu">排序:&nbsp;</label>
-                                <select class=" form-control">
-                                    <option>维修ID</option>
-                                    <option>姓名</option>
-                                    <option>负责区域</option>
-                                    <option>联系方式</option>
-                                    <option>当前状态</option>
+
+                            <div class="col-lg-5 col-xs-5 col-md-5 col-sm-5" style="text-align: right;float: right;">
+                                <label for="paixu">筛选:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>状态未处理</option>
+                                    <option>状态已处理</option>
+                                    <option>状态已转单</option>
+                                </select>
+                                <label for="paixu" style="padding-left:20px">排序:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>报修单号</option>
+                                    <option>下单时间从最早到最近</option>
+                                    <option>下单时间从最近到更早</option>
                                 </select>
                             </div>
                         </div>
@@ -119,12 +124,12 @@
                                     下单时间
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    用户账号
+                                    用户账号ID
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    设备编号
+                                    设备编号ID
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
                                     报单状态
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -135,63 +140,69 @@
                             <div class="tablebody">
                                     <div id="collapseSchool" class="collapse in" aria-expanded="true">
                                         <div class="row">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2  levl3">
-                                                1
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4   levl3">
-                                                <span></span><span>地区管理</span>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                /admin/system/userlist/software/
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 levl3">
-                                                2
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  levl3">
-                                                <span></span><span>规则管理</span>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                /admin/system/userlist/software/
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                            </div>
-                                        </div>
-                                        <div class="row ">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 levl3 ">
-                                                3
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl3">
-                                                <span></span><span>人员信息</span>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                /admin/system/userlist/software/
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2   levl3">
-                                                4
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  levl3">
-                                                <span></span><span>座位管理</span>
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                /admin/system/userlist/software/
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                                B0001
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
+                                                2018/6/20
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                CGNz
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                SB006
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                未处理
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                                B0002
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                                2018/6/22
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                GNDz
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                ZZ008
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                已处理
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                                B0003
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                                2018/6/23
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                CGNzd
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                SB006
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                已转单
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
                                             </div>
                                         </div>
                                     </div>
@@ -370,23 +381,27 @@
 
                     <!--任务单分配模块 -->
                     <div role="tabpanel" class="tab-pane" id="char">
-
                         <div class="check-div form-inline">
-                            <div class="col-xs-3">
-                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addUser">添加用户 </button>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
+                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加新的任务单 </button>
                             </div>
-                            <div class="col-xs-4">
-                                <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+                            <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4 ">
+                                <input type="text" class=" form-control input-sm " placeholder="输入任务单相关搜索">
                                 <button class="btn btn-white btn-xs ">查 询 </button>
                             </div>
-                            <div class="col-lg-3 col-lg-offset-2 col-xs-4" style=" padding-right: 40px;text-align: right;">
-                                <label for="paixu">排序:&nbsp;</label>
-                                <select class=" form-control">
-                                    <option>维修ID</option>
-                                    <option>姓名</option>
-                                    <option>负责区域</option>
-                                    <option>联系方式</option>
-                                    <option>当前状态</option>
+
+                            <div class="col-lg-5 col-xs-5 col-md-5 col-sm-5" style="text-align: right;float: right;">
+                                <label for="paixu">筛选:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>状态未分配</option>
+                                    <option>状态已分配</option>
+                                    <option>状态已完成</option>
+                                </select>
+                                <label for="paixu" style="padding-left:20px">排序:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>任务单号</option>
+                                    <option>下单时间从最早到最近</option>
+                                    <option>下单时间从最近到更早</option>
                                 </select>
                             </div>
                         </div>
@@ -402,7 +417,7 @@
                                     生成时间
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    维修人员
+                                    维修人员id
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     任务单状态
@@ -413,33 +428,69 @@
                             </div>
                             <div class="tablebody">
                                 <div class="row">
-                                    <div class="col-xs-2 ">
-                                        1
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        T0001
                                     </div>
-                                    <div class="col-xs-4">
-                                        </span><span>管理员</span>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        B0001
                                     </div>
-                                    <div class="col-xs-4">
-                                        管理员具有超年权限
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        2018/6/21
                                     </div>
-                                    <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeChar">修改</button>
-                                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteChar">删除</button>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        WX001
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        未分配
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-2 ">
-                                        2
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        T0002
                                     </div>
-                                    <div class="col-xs-4">
-                                        <span>游客</span>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        B0002
                                     </div>
-                                    <div class="col-xs-4">
-                                        可以查看信息
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        2018/6/25
                                     </div>
-                                    <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs">修改</button>
-                                        <button class="btn btn-danger btn-xs">删除</button>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        WX002
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        已分配
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        T0003
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        B0003
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        2018/6/28
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        WX003
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        已完成
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
                                     </div>
                                 </div>
                     </div>
@@ -596,21 +647,26 @@
                     <!--维修人员列表模块-->
                     <div role="tabpanel" class="tab-pane" id="user">
                         <div class="check-div form-inline">
-                            <div class="col-xs-3">
-                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addUser">添加用户 </button>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
+                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加新的维修人员 </button>
                             </div>
-                            <div class="col-xs-4">
-                                <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+                            <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4 ">
+                                <input type="text" class=" form-control input-sm " placeholder="输入维修人员相关搜索">
                                 <button class="btn btn-white btn-xs ">查 询 </button>
                             </div>
-                            <div class="col-lg-3 col-lg-offset-2 col-xs-4" style=" padding-right: 40px;text-align: right;">
-                                <label for="paixu">排序:&nbsp;</label>
-                                <select class=" form-control">
-                                    <option>维修ID</option>
-                                    <option>姓名</option>
+
+                            <div class="col-lg-5 col-xs-5 col-md-5 col-sm-5" style="text-align: right;float: right;">
+                                <label for="paixu">筛选:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>状态工作中</option>
+                                    <option>状态空闲</option>
+                                    <option>状态请假</option>
+                                </select>
+                                <label for="paixu" style="padding-left:20px">排序:&nbsp;</label>
+                                <select class="form-control">
                                     <option>负责区域</option>
-                                    <option>联系方式</option>
-                                    <option>当前状态</option>
+                                    <option>维修人员id</option>
+                                    <option>姓名</option>
                                 </select>
                             </div>
                         </div>
@@ -639,23 +695,64 @@
 
                                 <div class="row">
                                     <div class="col-xs-2 ">
-                                        goodmoning
+                                        WX001
                                     </div>
                                     <div class="col-xs-2">
-                                        国际关系地区
+                                        杨晓飞
                                     </div>
                                     <div class="col-xs-2">
-                                        李豆豆
+                                        C10
                                     </div>
                                     <div class="col-xs-2">
                                         13688889999
                                     </div>
                                     <div class="col-xs-2">
-                                        状态
+                                        工作中
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">修改</button>
-                                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteUser">删除</button>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-2 ">
+                                        WX002
+                                    </div>
+                                    <div class="col-xs-2">
+                                        蔡BB
+                                    </div>
+                                    <div class="col-xs-2">
+                                        C8
+                                    </div>
+                                    <div class="col-xs-2">
+                                        13666666699
+                                    </div>
+                                    <div class="col-xs-2">
+                                        请假
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-2 ">
+                                        WX003
+                                    </div>
+                                    <div class="col-xs-2">
+                                        洞箫杨
+                                    </div>
+                                    <div class="col-xs-2">
+                                        B8
+                                    </div>
+                                    <div class="col-xs-2">
+                                        15988889999
+                                    </div>
+                                    <div class="col-xs-2">
+                                        空闲
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
                                     </div>
                                 </div>
 
@@ -870,20 +967,26 @@
 
                     <!--用户反馈模块-->
                     <div role="tabpanel" class="tab-pane" id="scho">
-
                         <div class="check-div form-inline">
-                            <div class="col-xs-3">
-                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加地区 </button>
+                            <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
+                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加新的任务单 </button>
                             </div>
-                            <div class="col-lg-4 col-xs-5">
-                                <input type="text" class=" form-control input-sm " placeholder="输入文字搜索">
+                            <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4 ">
+                                <input type="text" class=" form-control input-sm " placeholder="输入任务单相关搜索">
                                 <button class="btn btn-white btn-xs ">查 询 </button>
                             </div>
-                            <div class="col-lg-3 col-lg-offset-1 col-xs-3" style="padding-right: 40px;text-align: right;float: right;">
-                                <label for="paixu">排序:&nbsp;</label>
+
+                            <div class="col-lg-5 col-xs-5 col-md-5 col-sm-5" style="text-align: right;float: right;">
+                                <label for="paixu">筛选:&nbsp;</label>
                                 <select class="form-control">
-                                    <option>地区</option>
-                                    <option>排名</option>
+                                    <option>状态未处理</option>
+                                    <option>状态已处理</option>
+                                </select>
+                                <label for="paixu" style="padding-left:20px">排序:&nbsp;</label>
+                                <select class="form-control">
+                                    <option>反馈单号</option>
+                                    <option>下单时间从最早到最近</option>
+                                    <option>下单时间从最近到更早</option>
                                 </select>
                             </div>
                         </div>
@@ -912,26 +1015,47 @@
 
                                 <div class="row">
                                     <div class="col-xs-2 ">
-                                        1
+                                        F001
                                     </div>
                                     <div class="col-xs-2">
-                                        国际关系地区
+                                        2018/6/24
                                     </div>
                                     <div class="col-xs-2">
-                                        45.0
+                                        CGNz
                                     </div>
                                     <div class="col-xs-2">
-                                        95.90
+                                        T001
                                     </div>
                                     <div class="col-xs-2">
-                                        <a class="linkCcc">查看</a>
+                                        <a class="linkCcc">好评</a>
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">修改</button>
-                                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSchool">删除</button>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">查看</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#reviseSchool">处理</button>
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-xs-2 ">
+                                        F002
+                                    </div>
+                                    <div class="col-xs-2">
+                                        2018/6/29
+                                    </div>
+                                    <div class="col-xs-2">
+                                        BB33
+                                    </div>
+                                    <div class="col-xs-2">
+                                        T002
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <a class="linkCcc">差评</a>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">查看</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#reviseSchool">处理</button>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
