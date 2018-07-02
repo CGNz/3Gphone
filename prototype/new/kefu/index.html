@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="客服工具">
         <meta name="keywords" content="客服管理工具 ">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <meta name="format-detection" content="telephone=no">
         <title>客服管理工具原型</title>
         <script src="js/jquery.min.js"></script>
@@ -156,9 +156,9 @@
                                                 未处理
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">详情</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -178,10 +178,10 @@
                                                 已处理
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
-                                            </div>
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">详情</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                           </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
@@ -200,10 +200,10 @@
                                                 已转单
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
-                                            </div>
+                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">详情</button>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
+                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
+                                           </div>
                                         </div>
                                     </div>
                             </div>
@@ -303,50 +303,44 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">修改资源</h4>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">新建任务单</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <form class="form-horizontal">
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">名称：</label>
+                                                    <label for="sName" class="col-xs-3 control-label">单号：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">链接：</label>
+                                                    <label for="sLink" class="col-xs-3 control-label">故障描述：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">排序：</label>
+                                                    <label for="sOrd" class="col-xs-3 control-label">地区：</label>
                                                     <div class="col-xs-8">
                                                         <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="sKnot" class="col-xs-3 control-label">父节点：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInput1" class="col-xs-3 control-label">资源类型：</label>
+                                                                                                <div class="form-group">
+                                                    <label for="exampleInput1" class="col-xs-3 control-label">选择维修人员：</label>
                                                     <div class="col-xs-8">
                                                         <label class="control-label" for="anniu">
-                                                            <input type="radio" name="leixing" id="anniu">菜单</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <input type="radio" name="leixing" id="anniu">WX001</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <label class="control-label" for="meun">
-                                                            <input type="radio" name="leixing" id="meun"> 按钮</label>
+                                                            <input type="radio" name="leixing" id="meun"> WX002</label>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                        <button type="button" class="btn btn-xs btn-green">保 存</button>
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">暂不分配</button>
+                                        <button type="button" class="btn btn-xs btn-green">确认任务单</button>
                                     </div>
                                 </div>
                                 <!-- /.modal-content -->
@@ -444,10 +438,10 @@
                                         未分配
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
-                                    </div>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeChar">详情</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeChar">分配</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
+                                   </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -466,9 +460,9 @@
                                         已分配
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeChar">详情</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeChar">分配</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -488,10 +482,10 @@
                                         已完成
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">受理</button>
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">处理</button>
-                                    </div>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeChar">详情</button>
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeChar">分配</button>
+                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
+                                   </div>
                                 </div>
                     </div>
                     
@@ -542,22 +536,17 @@
                                 <div class="container-fluid">
                                     <form class="form-horizontal">
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">权限名：</label>
-                                            <div class="col-xs-6 ">
-                                                <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
-                                            </div>
+                                            <label for="sName" class="col-xs-3 control-label">任务单号：T001</label>
+                                            
                                         </div>
                                         <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">描述：</label>
+                                            <label for="sLink" class="col-xs-3 control-label">报修单号：B001</label>
                                             <div class="col-xs-6 ">
                                                 <textarea class="form-control input-sm duiqi"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sOrd" class="col-xs-3 control-label">系统资源：</label>
-                                            <div class="col-xs-6">
-                                                <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                            </div>
+                                            <label for="sOrd" class="col-xs-3 control-label">维修人员ID：WX001</label>
                                         </div>
 
                                     </form>
@@ -580,36 +569,47 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">修改权限</h4>
+                                <h4 class="modal-title" id="gridSystemModalLabel">任务单详情</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
                                     <form class="form-horizontal">
                                         <div class="form-group ">
-                                            <label for="sName" class="col-xs-3 control-label">权限名：</label>
+                                            <label for="sName" class="col-xs-3 control-label">任务单号：</label>
                                             <div class="col-xs-6 ">
                                                 <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">描述：</label>
+                                            <label for="sLink" class="col-xs-3 control-label">报修单号：</label>
                                             <div class="col-xs-6 ">
                                                 <textarea class="form-control input-sm duiqi"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sOrd" class="col-xs-3 control-label">系统资源：</label>
+                                            <label for="sOrd" class="col-xs-3 control-label">生成时间：</label>
                                             <div class="col-xs-6">
                                                 <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">维修人员id：</label>
+                                            <div class="col-xs-6">
+                                                <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">备注：</label>
+                                            <div class="col-xs-6">
+                                                <textarea class="form-control input-sm duiqi"></textarea>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                <button type="button" class="btn btn-xs btn-green">保 存</button>
+                                <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-xs btn-green">确认</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -710,8 +710,9 @@
                                         工作中
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
-                                    </div>
+                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">查看详情</button>
+                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
+                                       </div>
                                 </div>
 
                                 <div class="row">
@@ -731,6 +732,7 @@
                                         请假
                                     </div>
                                     <div class="col-xs-2">
+                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">查看详情</button>
                                         <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
                                     </div>
                                 </div>
@@ -752,8 +754,9 @@
                                         空闲
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
-                                    </div>
+                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#changeSource">查看详情</button>
+                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseUser">编辑</button>
+                                       </div>
                                 </div>
 
                             </div>
@@ -969,10 +972,10 @@
                     <div role="tabpanel" class="tab-pane" id="scho">
                         <div class="check-div form-inline">
                             <div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
-                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#addSchool">添加新的任务单 </button>
+                                <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#reviseSchool">添加新的反馈 </button>
                             </div>
                             <div class="col-lg-4 col-xs-4 col-md-4 col-sm-4 ">
-                                <input type="text" class=" form-control input-sm " placeholder="输入任务单相关搜索">
+                                <input type="text" class=" form-control input-sm " placeholder="输入反馈单相关搜索">
                                 <button class="btn btn-white btn-xs ">查 询 </button>
                             </div>
 
@@ -1030,7 +1033,7 @@
                                         <a class="linkCcc">好评</a>
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">查看</button>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#addSchool">查看详情</button>
                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#reviseSchool">处理</button>
                                     </div>
                                 </div>
@@ -1052,7 +1055,7 @@
                                         <a class="linkCcc">差评</a>
                                     </div>
                                     <div class="col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#reviseSchool">查看</button>
+                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#addSchool">查看详情</button>
                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#reviseSchool">处理</button>
                                     </div>
                                 </div>
@@ -1097,35 +1100,30 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">添加地区</h4>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">反馈详情</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <form class="form-horizontal">
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">地区名称：</label>
+                                                    <label for="sName" class="col-xs-3 control-label">完工单号/任务单号：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">经度：</label>
+                                                    <label for="sName" class="col-xs-3 control-label">总体评价：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">纬度：</label>
+                                                    <label for="sLink" class="col-xs-3 control-label">详细建议：</label>
                                                     <div class="col-xs-8 ">
-                                                        <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
+                                                        <textarea class="form-control input-sm duiqi"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">简称：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                                    </div>
-                                                </div>
+                                                
                                             </form>
                                         </div>
                                     </div>
@@ -1146,33 +1144,33 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">修改地区</h4>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">新建反馈单</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <form class="form-horizontal">
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">地区名称：</label>
+                                                    <label for="sName" class="col-xs-3 control-label">用户ID：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">经度：</label>
+                                                    <label for="sName" class="col-xs-3 control-label">反馈对象（完工单号/报修单号）：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">纬度：</label>
+                                                    <label for="sLink" class="col-xs-3 control-label">反馈评价：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">简称：</label>
+                                                    <label for="sOrd" class="col-xs-3 control-label">反馈内容：</label>
                                                     <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        <textarea class="form-control input-sm duiqi"></textarea>
                                                     </div>
                                                 </div>
                                             </form>
