@@ -1,17 +1,12 @@
-<!doctype html>
-<html lang="ch">
-
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="客服工具">
-        <meta name="keywords" content="客服管理工具 ">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-        <meta name="format-detection" content="telephone=no">
-        <title>客服管理工具原型</title>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>模版工具</title>
+	<link rel="stylesheet" type="text/css" href="${resourceUrl}/css/slide.css">
+	<script src="${resourceUrl}/js/jquery.min.js"></script>
+    <script src="${resourceUrl}/js/bootstrap.min.js"></script>
+    <script>
             $(function() {
                 $(".meun-item").click(function() {
                     $(".meun-item").removeClass("meun-item-active");
@@ -45,56 +40,47 @@
                     $("#rightContent").toggleClass("pd0px");
                 })
             })
-        </script>
-        <!--[if lt IE 9]>
-  <script src="js/html5shiv.min.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/common.css" />
-        <link rel="stylesheet" type="text/css" href="css/slide.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.nouislider.css">
-        <style type="text/css">
-            .form-group{
-                margin-bottom: 5px;
-                font-size: 12px;
-            }
-
-            label {
-                font-size: 12px;
-            }
-        </style>
-    </head>
-
+    </script>
+    <link href="${resourceUrl}/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${resourceUrl}/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="${resourceUrl}/css/slide.css" />
+    <link rel="stylesheet" type="text/css" href="${resourceUrl}/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="${resourceUrl}/css/flat-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="${resourceUrl}/css/jquery.nouislider.css">
+    <style type="text/css">
+        .form-group{
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        label {
+            font-size: 12px;
+        }
+    </style>
+</head>
 <body>
-    <div id="wrap">
-            <!-- 左侧菜单栏目块 -->
-            <div class="leftMeun" id="leftMeun">
-                <div id="logoDiv">
-                    <p id="logoP"><span>客服管理工具</span></p>
-                </div>
-                <div id="personInfor">
-                    <p id="userName">客服：X</p>
-                    <!-- <p><span>mail@qq.com</span> More Templates <a href="#" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p> -->
-                    <p>
-                        <a>退出登录</a>
-                    </p>
-                </div>
-                <div class="meun-item meun-item-active" href="#sour" aria-controls="sour" role="tab" data-toggle="tab"><img src="images/icon_source.png">报单受理</div>
-                <div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img src="images/icon_user_grey.png">任务单管理</div>
-                <div class="meun-item" href="#user" aria-controls="user" role="tab" data-toggle="tab"><img src="images/icon_chara_grey.png">维修人员列表</div>
-                <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab"><img src="images/icon_change_grey.png">反馈管理</div>
-            </div>
-            <!-- 右侧具体内容栏目 -->
+	 <div id="wrap">
+	 		<!-- 左侧菜单栏目块 -->
+			<div class="leftMeun" id="leftMeun">
+		        <div id="logoDiv">
+		            <p id="logoP"><span>客服管理工具</span></p>
+		        </div>
+		        <div id="personInfor">
+		            <p id="userName">客服：AA</p>
+		        </div>
+		        <div class="meun-item meun-item-active" href="#sour" aria-controls="sour" role="tab" data-toggle="tab"><img src="${resourceUrl}/images/icon_source.png">报单受理</div>
+		        <div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img src="${resourceUrl}/images/icon_chara_grey.png">任务单分配</div>
+		        <div class="meun-item" href="#user" aria-controls="user" role="tab" data-toggle="tab"><img src="${resourceUrl}/images/icon_user_grey.png">维修人员列表</div>
+		        <div class="meun-item" href="#scho" aria-controls="scho" role="tab" data-toggle="tab"><img src="${resourceUrl}/images/icon_change_grey.png">反馈管理</div>
+		    </div>
+	 
+	 		<!-- 右侧具体内容栏目 -->
             <div id="rightContent">
                 <a class="toggle-btn" id="nimei">
                     <i class="glyphicon glyphicon-align-justify"></i>
                 </a>
                 <!-- 模块列表 -->
                 <div class="tab-content">
-                    <!--报单受理模块 -->
+                	 <!--报单受理模块 -->
                     <div role="tabpanel" class="tab-pane active" id="sour">
 
                         <!--头部筛选、搜索操作-->
@@ -466,7 +452,7 @@
                         <!-- /.modal -->
                     </div>
 
-                    <!--任务单分配模块 -->
+					 <!--任务单分配模块 -->
                     <div role="tabpanel" class="tab-pane" id="char">
                          <!--头部筛选、搜索操作-->
                         <div class="check-div form-inline">
@@ -488,8 +474,8 @@
                                 <label for="paixu" style="padding-left:20px">排序:&nbsp;</label>
                                 <select class="form-control">
                                     <option>任务单号</option>
-                                    <option>时间升序</option>
-                                    <option>时间降序</option>
+                                    <option>下单时间从最早到最近</option>
+                                    <option>下单时间从最近到更早</option>
                                 </select>
                             </div>
                         </div>
@@ -789,9 +775,9 @@
                         <div class="data-div">
                             <!--列表表头-->
                             <div class="row tableHeader">
-                               <!--  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
                                     维修人员ID
-                                </div> -->
+                                </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     姓名
                                 </div>
@@ -799,20 +785,10 @@
                                     负责区域
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-<<<<<<< HEAD
-                                    工作分类
-=======
                                     维修内容
->>>>>>> 8d5ab4ca1657726d9a4ef466060195c9f71e321e
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    联系方式
-                                </div>
-                               <!--  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     当前状态
-                                </div> -->
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    当前工作量
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     操作
@@ -1476,12 +1452,14 @@
                         <!-- /.modal -->
 
                     </div>
-
+             
                 </div>                                          
             </div>
-    </div>
-    
-    <script src="js/jquery.nouislider.js"></script>
-</body>
+	 </div>
+	
 
+	<script type="text/javascript" src="${resourceUrl}/js/html5.js"></script>
+	<script src="${resourceUrl}/js/jquery.nouislider.js"></script>
+</body>
 </html>
+
