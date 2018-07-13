@@ -11,6 +11,7 @@
         <title>客服管理工具原型</title>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
         <script>
             $(function() {
                 $(".meun-item").click(function() {
@@ -46,6 +47,14 @@
                 })
             })
         </script>
+        <style>
+            .cancelbtm{
+                margin-bottom: 0 !important;
+                padding-top: 3px !important;
+                padding-bottom: 3px !important;
+            }
+        </style>
+
         <!--[if lt IE 9]>
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
@@ -149,9 +158,9 @@
                             </div>
 
                             <!--报修单列表-->
-                            <div class="tablebody">
-                                    <div id="collapseSchool" class="collapse in" aria-expanded="true">
-                                        <div class="row">
+                            <div class="tablebody" id="rplist">
+                                    <div id="listdetail" class="collapse in" aria-expanded="true">
+                                        <!-- <div class="row" >
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
                                                 B0001
                                             </div>
@@ -168,11 +177,11 @@
                                                 未处理
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showDetail">详情</button>
+                                                <button id="cc" class="btn btn-success btn-xs" data-id="123" data-toggle="modal" data-target="#showDetail" >详情</button>
                                                 <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#getHandle">受理</button>
                                                 <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#changeSource">自动受理</button>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <!-- <div class="row">
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
                                                 B0002
@@ -265,33 +274,35 @@
                                         <div class="container-fluid">
                                             <form class="form-horizontal">
                                                 <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">报修单号：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
+                                                    <label class="col-xs-3 control-label">报修单号：</label>
+                                                
+                                                    <div class="col-xs-8">
+                                                        <input type="" id="danhao" class="form-control input-sm duiqi" id="sName" placeholder="" readonly="readonly">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sLink" class="col-xs-3 control-label">故障描述：</label>
                                                     <div class="col-xs-8 ">
-                                                        <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
+                                                        <input type="" id="miaoshu" class="form-control input-sm duiqi" id="sLink" placeholder="" readonly="readonly">
+                                                       
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">用户姓名/联系方式：</label>
+                                                    <label for="sOrd" class="col-xs-3 control-label">用户姓名：</label>
                                                     <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        <input type="" id="yonghu" class="form-control input-sm duiqi" id="sOrd" placeholder="" readonly="readonly">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sOrd" class="col-xs-3 control-label">地区：</label>
                                                     <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        <input type="" id="dizhi" class="form-control input-sm duiqi" id="sOrd" placeholder="" readonly="readonly">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sOrd" class="col-xs-3 control-label">备注：</label>
                                                     <div class="col-xs-6">
-                                                        <textarea class="form-control input-sm duiqi"></textarea>
+                                                        <textarea id="beizhu" class="form-control input-sm duiqi" readonly="readonly"></textarea>
                                                     </div>
                                                 </div>
                                             </form>
@@ -390,80 +401,9 @@
                                     <!-- /.modal-content -->
                                 </div>
                                 <!-- /.modal-dialog -->
-                            </div>
-                            <!-- /.modal-->
-
-                        <!--受理报单弹出窗口-->
-                        <div class="modal fade" id="getHandle" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">生成任务单</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            <form class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">维修内容：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">地区：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInput1" class="col-xs-3 control-label">选择维修人员：</label>
-                                                    <div class="col-xs-8">
-                                                        <label class="control-label" for="anniu">
-                                                            <input type="radio" name="leixing" id="anniu">WX001</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <label class="control-label" for="meun">
-                                                            <input type="radio" name="leixing" id="meun"> WX002</label>
-
-                                                        <!-- 优先显示符合地区和维修内容的维修人员，然后显示空闲的维修人员 -->
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">暂不分配</button>
-                                        <button type="button" class="btn btn-xs btn-green" data-dismiss="modal">确认任务单</button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
                         </div>
                         <!-- /.modal-->
 
-                        <!--弹出删除资源警告窗口-->
-                        <div class="modal fade" id="deleteSource" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            确定要删除该资源？删除后不可恢复！
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                        <button type="button" class="btn btn-xs btn-danger">保 存</button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
-                        </div>
-                        <!-- /.modal -->
                     </div>
 
                     <!--任务单分配模块 -->
@@ -500,7 +440,7 @@
                                     任务单号
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    保修单号
+                                    报修单号
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     生成时间
@@ -516,8 +456,8 @@
                                 </div>
                             </div>
                              <!--任务单列表项-->
-                            <div class="tablebody">
-                                <div class="row">
+                            <div class="tablebody" id="tklist">
+                                <!-- <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         T0001
                                     </div>
@@ -534,55 +474,12 @@
                                         未分配
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showTDetail">详情</button>
+                                        <button class="btn btn-success btn-xs" data-id="1" data-toggle="modal" data-target="#showTDetail">详情</button>
                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#Reassign">分配</button>
                                         <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        T0002
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        B0002
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        2018/6/25
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        WX002
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        已分配
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showTDetail">详情</button>
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#Reassign">分配</button>
-                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        T0003
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        B0003
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        2018/6/28
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        WX003
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        已完成
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showTDetail">详情</button>
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#Reassign">分配</button>
-                                        <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeChar">反馈</button>
-                                   </div>
-                                </div>
+                                </div> -->
+                                
                             </div>
                         </div>
 
@@ -632,37 +529,43 @@
                                                 <div class="form-group ">
                                                     <label for="sName" class="col-xs-3 control-label">任务单号：</label>
                                                     <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        <input type="" id="danhao" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sLink" class="col-xs-3 control-label">报修单号：</label>
                                                     <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        <input type="" id="baoxiu" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sOrd" class="col-xs-3 control-label">维修人员ID：</label>
                                                     <div class="col-xs-8">
-                                                            <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                            <input type="" id="weixiu" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                        <label for="sOrd" class="col-xs-3 control-label">开始时间</label>
+                                                        <div class="col-xs-8">
+                                                                <input type="" id="shijian" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                <!-- <div class="form-group">
                                                     <label for="sLink" class="col-xs-3 control-label">故障描述：</label>
                                                     <div class="col-xs-8 ">
                                                         <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
+                                                </div> -->
+                                                <!-- <div class="form-group">
                                                     <label for="sOrd" class="col-xs-3 control-label">地区：</label>
                                                     <div class="col-xs-8">
                                                         <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group">
                                                     <label for="sOrd" class="col-xs-3 control-label">备注：</label>
                                                     <div class="col-xs-6">
-                                                        <textarea class="form-control input-sm duiqi"></textarea>
+                                                        <textarea id="beizhu" class="form-control input-sm duiqi"></textarea>
                                                     </div>
                                                 </div>
                                             </form>
@@ -735,27 +638,116 @@
                         </div>
                         <!-- /.modal -->
 
-                        <!--弹出删除权限警告窗口-->
-                        <div class="modal fade" id="deleteChar" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            确定要删除该权限？删除后不可恢复！
+                        <!--报单详情弹出窗口-->
+                        <div class="modal fade" id="showDetail1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="gridSystemModalLabel">报修单详情</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group ">
+                                                        <label class="col-xs-3 control-label">报修单号：</label>
+                                                    
+                                                        <div class="col-xs-8">
+                                                            <input type="" id="danhao" class="form-control input-sm duiqi" id="sName" placeholder="" readonly="readonly">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sLink" class="col-xs-3 control-label">故障描述：</label>
+                                                        <div class="col-xs-8 ">
+                                                            <input type="" id="miaoshu" class="form-control input-sm duiqi" id="sLink" placeholder="" readonly="readonly">
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sOrd" class="col-xs-3 control-label">用户姓名：</label>
+                                                        <div class="col-xs-8">
+                                                            <input type="" id="yonghu" class="form-control input-sm duiqi" id="sOrd" placeholder="" readonly="readonly">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sOrd" class="col-xs-3 control-label">地区：</label>
+                                                        <div class="col-xs-8">
+                                                            <input type="" id="dizhi" class="form-control input-sm duiqi" id="sOrd" placeholder="" readonly="readonly">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sOrd" class="col-xs-3 control-label">备注：</label>
+                                                        <div class="col-xs-6">
+                                                            <textarea id="beizhu" class="form-control input-sm duiqi" readonly="readonly"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-xs btn-green" data-toggle="modal" data-dismiss="modal" data-target="#getHandle">受理报修单</button>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                        <button type="button" class="btn btn-xs btn-danger">保 存</button>
-                                    </div>
+                                    <!-- /.modal-content -->
                                 </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
+                                <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+                        <!-- 弹出查看维修人员信息窗口 -->
+                        <div class="modal fade" id="viewUser1" role="dialog" aria-labelledby="gridSystemModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="gridSystemModalLabel">查看维修人员信息</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label for="sLink" class="col-xs-3 control-label">编号：</label>
+                                                        <div class="col-xs-8 ">
+                                                            <input type="" class="form-control input-sm duiqi" id="bianhao" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <label for="sName" class="col-xs-3 control-label">姓名：</label>
+                                                        <div class="col-xs-8 ">
+                                                            <input type="email" class="form-control input-sm duiqi" id="xingming" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sLink" class="col-xs-3 control-label">联系方式：</label>
+                                                        <div class="col-xs-8 ">
+                                                            <input type="" class="form-control input-sm duiqi" id="lianx" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sOrd" class="col-xs-3 control-label">负责区域：</label>
+                                                        <div class="col-xs-8">
+                                                            <input type="" class="form-control input-sm duiqi" id="quyu" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="sKnot" class="col-xs-3 control-label">维修内容：</label>
+                                                        <div class="col-xs-8">
+                                                            <input type="" class="form-control input-sm duiqi" id="neir" placeholder="">
+                                                        </div>
+                                                    </div> 
+                                                    
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">确定</button>
+                                            <button type="button" class="btn btn-xs btn-green" data-dismiss="modal" data-toggle="modal" data-target="#editUser">编辑信息</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
                         </div>
                         <!-- /.modal -->
                     </div>
@@ -789,9 +781,9 @@
                         <div class="data-div">
                             <!--列表表头-->
                             <div class="row tableHeader">
-                               <!--  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
                                     维修人员ID
-                                </div> -->
+                                </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     姓名
                                 </div>
@@ -799,28 +791,19 @@
                                     负责区域
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-<<<<<<< HEAD
-                                    工作分类
-=======
-                                    维修内容
->>>>>>> 8d5ab4ca1657726d9a4ef466060195c9f71e321e
-                                </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     联系方式
                                 </div>
                                <!--  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     当前状态
                                 </div> -->
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                    当前工作量
-                                </div>
+                                
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     操作
                                 </div>
                             </div>
                             <!--列表字段-->
-                            <div class="tablebody">
-                                <div class="row">
+                            <div class="tablebody" id="mtlist">
+                                <!-- <div class="row">
                                     <div class="col-xs-2 ">
                                         WX001
                                     </div>
@@ -831,60 +814,14 @@
                                         C10
                                     </div>
                                     <div class="col-xs-2">
-                                        空调
+                                        1324493456673
                                     </div>
-                                    <div class="col-xs-2">
-                                        工作中
-                                    </div>
-                                    <div class="col-xs-2">
+                                    <div class="col-xs-4">
                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#viewUser">查看详情</button>
                                         <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editUser">编辑</button>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="row">
-                                    <div class="col-xs-2 ">
-                                        WX002
-                                    </div>
-                                    <div class="col-xs-2">
-                                        蔡BB
-                                    </div>
-                                    <div class="col-xs-2">
-                                        C8
-                                    </div>
-                                    <div class="col-xs-2">
-                                        冰箱
-                                    </div>
-                                    <div class="col-xs-2">
-                                        请假
-                                    </div>
-                                    <div class="col-xs-2">
-                                        <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#viewUser">查看详情</button>
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editUser">编辑</button>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-2 ">
-                                        WX003
-                                    </div>
-                                    <div class="col-xs-2">
-                                        洞箫杨
-                                    </div>
-                                    <div class="col-xs-2">
-                                        B8
-                                    </div>
-                                    <div class="col-xs-2">
-                                        所有家电
-                                    </div>
-                                    <div class="col-xs-2">
-                                        空闲
-                                    </div>
-                                    <div class="col-xs-2">
-                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#viewUser">查看详情</button>
-                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#editUser">编辑</button>
-                                       </div>
-                                </div>
 
                             </div>
 
@@ -921,145 +858,48 @@
                             </ul>
                         </footer>
 
-                        <!--弹出添加维修人员窗口-->
-                        <div class="modal fade" id="addUser" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">添加维修人员</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            <form class="form-horizontal">
-                                                <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">姓名：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">联系方式：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">负责区域：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sKnot" class="col-xs-3 control-label">维修内容：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
-                                                    </div>
-                                                </div>
-            
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>
-                                        <button type="button" class="btn btn-xs btn-green" data-dismiss="modal">添加</button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
-                        </div>
-                        <!-- /.modal -->
-
-                        <!--弹出修改维修人员信息窗口-->
-                        <div class="modal fade" id="editUser" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">修改信息</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            <form class="form-horizontal">
-                                                <div class="form-group ">
-                                                    <label for="sName" class="col-xs-3 control-label">姓名：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sLink" class="col-xs-3 control-label">联系方式：</label>
-                                                    <div class="col-xs-8 ">
-                                                        <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sOrd" class="col-xs-3 control-label">负责区域：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sKnot" class="col-xs-3 control-label">维修内容：</label>
-                                                    <div class="col-xs-8">
-                                                        <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>
-                                        <button type="button" class="btn btn-xs btn-green" data-dismiss="modal">保存</button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
-                        </div>
-                        <!-- /.modal -->
                         <!-- 弹出查看维修人员信息窗口 -->
                         <div class="modal fade" id="viewUser" role="dialog" aria-labelledby="gridSystemModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="gridSystemModalLabel">查看信息</h4>
+                                            <h4 class="modal-title" id="gridSystemModalLabel">查看维修人员信息</h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="container-fluid">
                                                 <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label for="sLink" class="col-xs-3 control-label">编号：</label>
+                                                        <div class="col-xs-8 ">
+                                                            <input type="" class="form-control input-sm duiqi" id="bianhao" placeholder="">
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group ">
                                                         <label for="sName" class="col-xs-3 control-label">姓名：</label>
                                                         <div class="col-xs-8 ">
-                                                            <input type="email" class="form-control input-sm duiqi" id="sName" placeholder="">
+                                                            <input type="email" class="form-control input-sm duiqi" id="xingming" placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="sLink" class="col-xs-3 control-label">联系方式：</label>
                                                         <div class="col-xs-8 ">
-                                                            <input type="" class="form-control input-sm duiqi" id="sLink" placeholder="">
+                                                            <input type="" class="form-control input-sm duiqi" id="lianx" placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="sOrd" class="col-xs-3 control-label">负责区域：</label>
                                                         <div class="col-xs-8">
-                                                            <input type="" class="form-control input-sm duiqi" id="sOrd" placeholder="">
+                                                            <input type="" class="form-control input-sm duiqi" id="quyu" placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="sKnot" class="col-xs-3 control-label">维修内容：</label>
                                                         <div class="col-xs-8">
-                                                            <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
+                                                            <input type="" class="form-control input-sm duiqi" id="neir" placeholder="">
                                                         </div>
                                                     </div> 
-                                                    <div class="form-group">
-                                                        <label for="sKnot" class="col-xs-3 control-label">维修记录：</label>
-                                                        <div class="col-xs-8">
-                                                            <input type="" class="form-control input-sm duiqi" id="sKnot" placeholder="">
-                                                        </div>
-                                                    </div>
+                                                    
                                                 </form>
                                             </div>
                                         </div>
@@ -1071,32 +911,9 @@
                                     <!-- /.modal-content -->
                                 </div>
                                 <!-- /.modal-dialog -->
-                            </div>
-                            <!-- /.modal -->
-
-                        <!--弹出删除用户警告窗口-->
-                        <div class="modal fade" id="deleteUser" role="dialog" aria-labelledby="gridSystemModalLabel">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="container-fluid">
-                                            确定要删除该用户？删除后不可恢复！
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
-                                        <button type="button" class="btn  btn-xs btn-danger">保 存</button>
-                                    </div>
-                                </div>
-                                <!-- /.modal-content -->
-                            </div>
-                            <!-- /.modal-dialog -->
                         </div>
                         <!-- /.modal -->
+
 
                     </div>
 
@@ -1476,6 +1293,8 @@
                         <!-- /.modal -->
 
                     </div>
+
+                    
 
                 </div>                                          
             </div>
