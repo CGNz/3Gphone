@@ -30,7 +30,7 @@ $(document).ready(function(){
                                   
                     var e ='</div><div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">'          
                                    
-                    var f ='</div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><button id="cc" class="btn btn-success btn-xs" data-id="'+data[i].id+'" data-toggle="modal" data-target="#showDetail" >详情</button><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#getHandle">受理</button><button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#changeSource">自动受理</button></div></div> '           
+                    var f ='</div><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><button id="cc" class="btn btn-success btn-xs" data-id="'+data[i].id+'" data-toggle="modal" data-target="#showDetail" >详情</button><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#getHandle">受理</button><button class="btn btn-yellow btn-xs" id="handle" data-id="'+data[i].id+'">自动受理</button></div></div> '           
 
                     tmp = a+data[i].id+b+data[i].report_time+c+data[i].wtb_id+d+data[i].equipment_id+e+data[i].status+f;
                     $(listdetail).append(tmp)
