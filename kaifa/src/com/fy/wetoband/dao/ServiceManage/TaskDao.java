@@ -37,6 +37,7 @@ public class TaskDao extends BaseDao{
 	}
 	
 	public int countTask(String maintainerId){
-		String sql = "select count(*) from task group by maintainerId"; 
+		String sql = "select count(*) from task group by maintainerId";
+		return 0; 
 	}
 }
