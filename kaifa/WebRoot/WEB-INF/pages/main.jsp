@@ -159,50 +159,7 @@
                                                 <button class="btn btn-yellow btn-xs" data-toggle="modal" data-target="#changeSource">自动受理</button>
                                             </div>
                                         </div>
-                                        <!-- <div class="row">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
-                                                B0002
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
-                                                2018/6/22
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                GNDz
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                ZZ008
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                                已处理
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showDetail">详情</button>
-                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#getHandle">受理</button>
-                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                           </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
-                                                B0003
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
-                                                2018/6/23
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                CGNzd
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                SB006
-                                            </div>
-                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                                已转单
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#showDetail">详情</button>
-                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#getHandle">受理</button>
-                                                <button class="btn btn-warning btn-xs" data-toggle="modal" data-target="#changeSource">转单</button>
-                                           </div>
-                                        </div> -->
+                                        
                                     </div>
                             </div>
                         </div>
